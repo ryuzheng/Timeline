@@ -1,3 +1,15 @@
+//2013-12-14 BY [Ryu](http://zhengzexin.com/)
+从[《Building Facebook-like Vertical Timeline using Javascript, PHP and MySQL》](http://blueflame-software.com/blog/building-facebook-like-vertical-timeline-using-javascript-php-and-mysql/)修改支持中文、汉化部分文字
+
+目前已支持中文
+原版英文[demo](http://blueflame-software.com/blog/demo/building_facebook-like_vertical_timeline_using_javascript_php_and_mysql/)
+现支持中文版[demo](http://zhengzexin.com/demo/timeline/)
+
+修改内容：
+(1)首页的四个按钮——展开所有 收起所有 新的在前 旧的在前（汉化）;
+(2)"data.php"添加"mysql_query ( "set names utf8" );"以支持中文;
+(3)"timeline.sql"中的"ENGINE=InnoDB DEFAULT CHARSET=latin;"修改为"ENGINE=InnoDB DEFAULT CHARSET=utf8;"已支持中文
+
 # Super Awesome Vertical Timeline
 
 **Timeline** shows a series of events in a vertically time-sorted structure.
@@ -20,6 +32,7 @@ Create a Google Spreadsheet with the following columns:
 * read more url
 
 **Please note that the the _display date_ column must be in the format _Month day, Year_ (April 25, 2012) for proper javascript parsing.**
+**Also, all columns must be _plain text_ format, including the two date columns.**
 
 Now follow the instructions over at Tabletop.js to publish the Spreadsheet.
 
@@ -27,7 +40,9 @@ The Spreadsheet used in the example index.html file is at [https://docs.google.c
 
 ### 2) Insert the Spreadsheet key into script.js
 
-Find your Spreadsheet key (see Tabletop.js for instructions), and replace the sample key on line 81 of `js/script.js` with the key to your Spreadsheet.
+Find your Spreadsheet key (see Tabletop.js for instructions), and replace the sample key on line 3 of `js/script.js` with the key to your Spreadsheet.
+
+You also need to update the name of the spreadsheet 'sheet' that holds the data on line 4 of 'js/script.js'.
 
 ### 3) Enjoy!
 
@@ -49,3 +64,5 @@ The following plugins/libraries are used:
 [jQuery](http://jquery.com/), [Isotope](http://isotope.metafizzy.co), [Tabletop.js](http://github.com/jsoma/tabletop), [Handlebars.js](http://handlebarsjs.com/), [jQuery imagesLoaded plugin](http://github.com/desandro/imagesloaded), and [jQuery resize event](http://benalman.com/projects/jquery-resize-plugin/)
 
 NOTE: All of the elements are free for non-commercial use. Commercial use of [Isotope](http://isotope.metafizzy.co) requires a $25 [license](http://metafizzy.co/#isotope-license).
+
+
